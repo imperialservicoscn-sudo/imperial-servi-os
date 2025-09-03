@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imperial Serviços CN — Engenharia, Energia & Segurança</title>
+  <meta name="description" content="Portfólio e serviços da Imperial Serviços CN: engenharia elétrica, automação, energia solar, laudos técnicos, perícias, treinamentos NR e eficiência energética.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            imperial: {
+              50: '#fffbeb',
+              500: '#f59e0b',
+              900: '#78350f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --brand-1: #0F172A;
+      --brand-2: #1E293B;
+      --accent: #F59E0B;
+    }
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass { 
+      background: rgba(255,255,255,0.08); 
+      backdrop-filter: blur(8px); 
+    }
+    .shadow-soft { 
+      box-shadow: 0 10px 25px rgba(2,6,23,0.2); 
+    }
+    .service-card {
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <a href="#top" class="flex items-center gap-3 font-extrabold tracking-tight text-slate-900">
+        <div class="h-9 w-9 bg-imperial-500 rounded-lg flex items-center justify-center text-white font-bold">IS</div>
+        <span>Imperial Serviços CN</span>
+      </a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-300">
+        <span class="sr-only">Abrir menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <ul id="menu" class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <li><a class="hover:text-slate-900 text-slate-600" href="#servicos">Serviços</a></li>
+        <li><a class="hover:text-slate-900 text-slate-600" href="#projetos">Projetos</a></li>
+        <li><a class="hover:text-slate-900 text-slate-600" href="#treinamentos">Treinamentos</a></li>
+        <li><a class="hover:text-slate-900 text-slate-600" href="#sobre">Sobre</a></li>
+        <li><a class="hover:text-slate-900 text-slate-600" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative isolate overflow-hidden gradient-bg">
+    <div class="absolute inset-0 bg-black/40 z-0"></div>
+    <div class="absolute top-0 right-0 -mt-16 opacity-10">
+      <svg width="400" height="400" viewBox="0 0 200 200">
+        <path fill="#f59e0b" d="M45.1,-58.1C63.2,-49.3,85.2,-45.8,94.4,-33.5C103.6,-21.2,100.1,-0.2,91.5,15.1C82.9,30.4,69.3,41.1,55.1,49.6C40.9,58.1,26.2,64.5,10.8,67.3C-4.6,70.1,-20.6,69.4,-32.3,61.7C-44,54,-51.3,39.4,-58.6,24.1C-65.9,8.9,-73.1,-7.1,-70.1,-20.6C-67.1,-34.1,-53.9,-45.2,-40.4,-55.2C-26.9,-65.2,-13.4,-74.2,-0.6,-73.4C12.2,-72.5,24.4,-61.9,45.1,-58.1Z" transform="translate(100 100)" />
+      </svg>
+    </div>
+    <div class="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-white z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Engenharia Elétrica, Automação e Segurança com <span class="text-amber-400">Padrão Imperial</span></h1>
+        <p class="mt-5 text-lg text-slate-200">Projetos, execução, manutenção, laudos, perícias e treinamentos NR. Energia solar, eficiência energética e soluções sob medida para sua empresa.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contato" class="inline-flex items-center justify-center rounded-xl bg-amber-500 hover:bg-amber-600 px-5 py-3 font-semibold text-slate-900 shadow-soft transition-colors">Solicitar Proposta</a>
+          <a href="#servicos" class="inline-flex items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20 px-5 py-3 font-semibold hover:bg-white/20 transition-colors">Ver Serviços</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Áreas de Atuação</h2>
+        <p class="text-slate-600 mt-2">Atendemos todo o Brasil com soluções completas, seguras e eficientes.</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Engenharia Elétrica e Automação -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Engenharia Elétrica e Automação</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>Montagem e manutenção de painéis</li>
+              <li>Projetos elétricos (resid., com., ind.)</li>
+              <li>Automação e integração de sistemas</li>
+              <li>Proteções: DPS, DR, aterramento, SPDA</li>
+              <li>Melhorias de processos industriais</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Energia Solar -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Energia Solar e Sustentabilidade</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>Projetos até 150 kWp (off-grid / grid zero)</li>
+              <li>Integração com geradores & sistemas híbridos</li>
+              <li>Dimensionamento de baterias</li>
+              <li>Análise de economia e ROI</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Segurança do Trabalho -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Segurança do Trabalho (NRs)</h3>
+            <p class="mt-2 text-sm text-slate-600">Cursos presenciais e certificação: NR10, NR10 SEP, NR11, NR20, NR34, NR35.</p>
+          </div>
+        </article>
+
+        <!-- Laudos & Perícias -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Laudos Técnicos & Perícias</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>Conformidade normativa e ART</li>
+              <li>Inspeções em instalações e máquinas</li>
+              <li>Relatórios técnicos e pareceres periciais</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Eficiência Energética -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Eficiência Energética</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>Diagnóstico energético e plano de ação</li>
+              <li>Medições, fator de potência e qualidade de energia</li>
+              <li>Retrofits e automação para economia</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Inovações -->
+        <article class="service-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md">
+          <div class="h-44 bg-imperial-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-imperial-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Inovações Tecnológicas</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>IoT industrial e monitoramento remoto</li>
+              <li>Armazenamento de energia (LFP/SSB)</li>
+              <li>Microgrids e resposta à demanda</li>
+              <li>IA para manutenção preditiva</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS / CASES -->
+  <section id="projetos" class="py-16 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Projetos & Cases</h2>
+        <p class="text-slate-600 mt-2">Alguns dos nossos trabalhos recentes</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Case 1 -->
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold">Projeto Fotovoltaico — 150 kWp</h3>
+            <p class="text-sm text-slate-600 mt-2">Memorial, diagrama, lista de materiais e proposta completa (Orkana).</p>
+          </div>
+        </article>
+        <!-- Case 2 -->
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold">Hotel (50+ dormitórios) — Solar + Geradores</h3>
+            <p class="text-sm text-slate-600 mt-2">Integração de 208 módulos 460 Wp, estudo de ROI e economia de diesel.</p>
+          </div>
+        </article>
+        <!-- Case 3 -->
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h2m-8 0h2m-2 0h2m-8 0h2m-2 0h2" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold">Banco do Brasil — Chuí/RS</h3>
+            <p class="text-sm text-slate-600 mt-2">Reforma elétrica e mudança para padrão trifásico com concessionária.</p>
+          </div>
+        </article>
+        <!-- Case 4 -->
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold">Mineração — AERO (Mina de Vermelhos)</h3>
+            <p class="text-sm text-slate-600 mt-2">Proteção para Jumbos 440 V e adequações NR10.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREINAMENTOS -->
+  <section id="treinamentos" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Treinamentos & Certificação</h2>
+        <p class="text-slate-600 mt-2">Cursos presenciais com certificação válida em todo território nacional</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="p-6"><h3 class="font-bold">NR10 (40h) e Reciclagem</h3><p class="text-sm text-slate-600 mt-2">Apostila completa, avaliação, plano de aula, lista de presença e certificado.</p></div>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div class="p-6"><h3 class="font-bold">NR35 — Trabalho em Altura</h3><p class="text-sm text-slate-600 mt-2">Práticas, EPI/EPC, procedimentos e resgate.</p></div>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <div class="h-40 bg-gradient-to-r from-imperial-500 to-amber-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+          </div>
+          <div class="p-6"><h3 class="font-bold">NR20 — Inflamáveis e Combustíveis</h3><p class="text-sm text-slate-600 mt-2">Conteúdo programático completo e certificação.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-16 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-extrabold">Sobre a Imperial Serviços CN</h2>
+          <p class="mt-4 text-slate-200">Com CNPJ 59.509.501/0001-40, atuamos em todo o Brasil oferecendo soluções completas em engenharia elétrica, automação, energia solar, segurança do trabalho e eficiência energética.</p>
+          <p class="mt-4 text-slate-200">Nossa equipe é composta por engenheiros eletricistas, técnicos em segurança do trabalho e profissionais especializados, todos comprometidos com a excelência e qualidade dos serviços prestados.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <div class="bg-white/10 rounded-lg px-4 py-2">
+              <div class="font-bold text-imperial-500">+150</div>
+              <div class="text-sm">Projetos Executados</div>
+            </div>
+            <div class="bg-white/10 rounded-lg px-4 py-2">
+              <div class="font-bold text-imperial-500">+500</div>
+              <div class="text-sm">Profissionais Treinados</div>
+            </div>
+            <div class="bg-white/10 rounded-lg px-4 py-2">
+              <div class="font-bold text-imperial-500">100%</div>
+              <div class="text-sm">Clientes Satisfeitos</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="bg-imperial-500 rounded-2xl p-8 text-center max-w-md w-full">
+            <h3 class="text-xl font-bold">Nossa Missão</h3>
+            <p class="mt-4">Fornecer soluções em engenharia elétrica e segurança do trabalho com excelência técnica, inovação e comprometimento, superando as expectativas de nossos clientes.</p>
+            <div class="mt-6 border-t border-white/20 pt-4">
+              <p class="text-sm">Eng. Eletricista: Thiago Anderson Ferreira de Araújo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-imperial-500 to-amber-400 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-3xl font-extrabold">Pronto para levar seu projeto ao próximo nível?</h3>
+      <p class="mt-2 text-imperial-900 font-medium">Entre em contato e receba um orçamento personalizado.</p>
+      <div class="mt-8 flex justify-center gap-3">
+        <a href="#contato" class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-slate-100 px-5 py-3 font-semibold text-slate-900 shadow-soft transition-colors">Solicitar Proposta</a>
+        <a href="https://wa.me/5584996533300" target="_blank" class="inline-flex items-center justify-center rounded-xl bg-imperial-900 hover:bg-slate-900 px-5 py-3 font-semibold text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10c0 4.418-3.582 8-8 8-1.424 0-2.76-.373-3.919-1.026L2 18l1.026-4.081A7.93 7.93 0 012 10c0-4.418 3.582-8 8-8s8 3.582 8 8zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.5 4.5a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z" clip-rule="evenodd" />
+          </svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Contato</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <form class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+          <div class="grid grid-cols-1 gap-4">
+            <input class="px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-imperial-500 focus:border-transparent" type="text" placeholder="Seu nome" required>
+            <input class="px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-imperial-500 focus:border-transparent" type="email" placeholder="Seu e-mail" required>
+            <input class="px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-imperial-500 focus:border-transparent" type="tel" placeholder="Seu telefone">
+            <textarea class="px-4 py-3 rounded-xl border border-slate-300 min-h-[120px] focus:ring-2 focus:ring-imperial-500 focus:border-transparent" placeholder="Mensagem"></textarea>
+            <button class="inline-flex justify-center items-center rounded-xl bg-imperial-500 hover:bg-imperial-600 text-white px-5 py-3 font-semibold transition-colors">Enviar Mensagem</button>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">*Este formulário é demonstrativo. Configure um serviço de e-mail para receber as mensagens.</p>
+        </form>
+        <div class="space-y-4">
+          <div class="p-6 rounded-2xl border border-slate-200">
+            <h3 class="font-bold">Imperial Serviços CN</h3>
+            <p class="text-slate-600 mt-1">CNPJ: 59.509.501/0001-40</p>
+            <p class="text-slate-600">Atuação em todo o Brasil</p>
+            <div class="mt-4 space-y-1 text-slate-700">
+              <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-imperial-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg><strong>Telefone:</strong> (84) 99653-3300</p>
+              <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-imperial-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg><strong>E-mail:</strong> imperialservicoscn@gmail.com</p>
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200">
+            <h4 class="font-semibold">Documentação & Certificações</h4>
+            <ul class="list-disc list-inside text-sm text-slate-600 mt-2">
+              <li>Eng. Eletricista: Thiago Anderson Ferreira de Araújo</li>
+              <li>ART, Laudos, Perícias e Treinamentos NR</li>
+              <li>Equipe: Eng. Seg. do Trabalho, Tec. Seg., Eng. Civil, Eletrotécnico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 bg-slate-950 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© 2025 Imperial Serviços CN — Qualidade, Segurança e Inovação</p>
+      <div class="text-sm">Desenvolvido com TailwindCSS</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    if (btn) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const el = document.querySelector(id);
+        if (el) { 
+          e.preventDefault(); 
+          el.scrollIntoView({ behavior: 'smooth' }); 
+          // Close mobile menu if open
+          if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
